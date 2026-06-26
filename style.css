@@ -1,0 +1,352 @@
+body {
+  background: radial-gradient(circle at center, #3a506b 0%, #1a2a3a 100%); /* More vibrant lunar gradient */
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+  height: 100vh;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.enter-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: radial-gradient(circle at center, #4a6580 0%, #2a3a4a 100%); /* More vibrant lunar gradient for entry page */
+}
+
+.enter {
+  text-align: center;
+  animation: fadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.title {
+  font-size: 54px;
+  font-weight: 700;
+  letter-spacing: 12px;
+  margin-bottom: 8px;
+  background: linear-gradient(180deg, #ffffff 0%, #e0e0e0 100%); /* Brighter gradient for lunar theme */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  color: #e0e0e0;
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+}
+
+.press {
+  display: inline-block;
+  padding: 12px 30px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.press:hover {
+  background: #ffffff;
+  color: #000000;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+  transform: translateY(-3px);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  z-index: -1;
+}
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.card {
+  background: rgba(35, 45, 60, 0.85); /* Darker, more saturated bluish background for card */
+  backdrop-filter: blur(35px);
+  -webkit-backdrop-filter: blur(35px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px 80px 24px 24px; /* Quarter moon effect */
+  padding: 40px 45px;
+  width: 380px;
+  text-align: center;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.95), 
+              0 0 50px rgba(255, 255, 255, 0.05),
+              inset 0 0 15px rgba(255, 255, 255, 0.08);
+  animation: cardShow 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 1), 0 0 60px rgba(255, 255, 255, 0.1);
+}
+
+.avatar-container {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 20px auto;
+}
+
+#discord-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  object-fit: cover;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+}
+
+.status-dot {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 5px solid #1a1a1a;
+  background-color: #80848e;
+}
+.status-dot.online { background-color: #57f287; box-shadow: 0 0 15px #57f287; } /* More vibrant Discord green */
+.status-dot.idle { background-color: #fee75c; box-shadow: 0 0 15px #fee75c; } /* More vibrant Discord orange */
+.status-dot.dnd { background-color: #ed4245; box-shadow: 0 0 15px #ed4245; } /* More vibrant Discord red */
+.status-dot.offline { background-color: #72767d; }
+
+.card h1 {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.card-subtitle {
+  color: #f0f0f0;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 24px;
+}
+
+.gun-badges {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.badge {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.badge:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #fff;
+}
+
+.activity-box {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.activity-title {
+  margin-bottom: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #e0e0e0;
+  letter-spacing: 1.5px;
+}
+
+.activity-detail {
+  font-size: 13px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-icon {
+  color: #e0e0e0;
+  font-size: 22px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  color: #fff;
+  transform: scale(1.3);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes cardShow {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); border-color: rgba(255,255,255,0.5); }
+  100% { transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 40px;
+    letter-spacing: 8px;
+  }
+
+  .subtitle {
+    color: #e0e0e0;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .press {
+    padding: 10px 25px;
+    font-size: 11px;
+  }
+
+  .card {
+    width: 90%;
+    padding: 30px 25px;
+    border-radius: 20px 60px 20px 20px; /* Adjusted for smaller screens */
+  }
+
+  .card h1 {
+    font-size: 28px;
+  }
+
+  .card-subtitle {
+    color: #f0f0f0;
+    font-size: 13px;
+  }
+
+  .avatar-container {
+    width: 90px;
+    height: 90px;
+    transition: transform 0.3s ease;
+  }
+
+  .avatar-container:hover {
+    transform: scale(1.05);
+  }
+
+  #discord-avatar {
+    border-width: 2px;
+  }
+
+  .status-dot {
+    width: 20px;
+    height: 20px;
+    border-width: 4px;
+    transition: transform 0.3s ease;
+  }
+
+  .status-dot:hover {
+    transform: scale(1.2);
+  }
+
+  .gun-badges {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 5px 10px;
+    font-size: 10px;
+    color: #ffffff;
+  }
+
+  .social-icon {
+    color: #e0e0e0;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 32px;
+    letter-spacing: 6px;
+  }
+
+  .subtitle {
+    font-size: 10px;
+  }
+
+  .press {
+    padding: 8px 20px;
+    font-size: 10px;
+  }
+
+  .card {
+    width: 95%;
+    padding: 25px 20px;
+    border-radius: 15px 50px 15px 15px; /* Adjusted for smaller screens */
+  }
+
+  .card h1 {
+    font-size: 24px;
+  }
+
+  .avatar-container {
+    width: 70px;
+    height: 70px;
+  }
+
+  .status-dot {
+    width: 16px;
+    height: 16px;
+    bottom: 2px;
+    right: 2px;
+    border-width: 3px;
+  }
+
+  .social-links {
+    gap: 15px;
+  }
+}
